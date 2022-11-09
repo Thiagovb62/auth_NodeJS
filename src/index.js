@@ -5,12 +5,12 @@ const jwt = require('jsonwebtoken');
 
 require("dotenv").config();
 
+const routes = require('./routes')
+
 const app = express();
 app.use(express.json());
+app.use(routes)
 
-app.get('/', function(req, res) {
-    res.status(200).json({ msg: 'api inicializada' })
-})
 mongoose.connect(process.env.CONNECTIONSTRING)
     .then(() => {
         console.log("conectei no banco de dados");
