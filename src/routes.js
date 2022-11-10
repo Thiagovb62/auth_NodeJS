@@ -3,9 +3,8 @@ const UserController = require('./controller/UserController')
 
 const routes = express.Router()
 
-routes.get('/', function(req, res) {
-    res.status(200).json({ msg: 'api inicializada' })
-})
 
-routes.post('/user',UserController.create)
+routes.get('/users',UserController.index)
+routes.post('/register',UserController.create)
+
 module.exports = routes;
